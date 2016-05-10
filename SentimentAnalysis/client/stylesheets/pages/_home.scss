@@ -1,0 +1,285 @@
+.container{
+ @include outer-container;
+ text-align:center;
+ padding: 2.5% 0;
+}
+
+.content{
+	width:100%;
+}
+h1{
+	font-family:$copy;
+	color:$white;
+	font-size:2rem;
+	font-weight:100;
+	text-align:left;
+	letter-spacing: -1.5px;
+	word-spacing: -0.75px;
+	border-bottom:2px solid $accent;
+}
+
+.toggleContainer{
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	margin: 1rem auto;
+	background-color: rgba(10,10,20, 0.75);
+	border-radius:2px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+
+	h2{
+			font-size:1rem;
+			text-transform:uppercase;
+			letter-spacing:2px;
+			font-weight:100;
+
+	}
+
+}
+
+.aToggle{
+	display:inline-block;
+
+		p{
+			color:$gray;
+			display:inline-block;
+			font-size:1.5rem;
+			opacity:0.25;
+			@include transition(0.1s ease-in);
+			cursor:pointer;
+		}
+		p:hover{
+			opacity:1;
+			@include transition(0.1s ease-in);
+		}
+}
+
+.aToggle.active{
+	p{
+		opacity:1 !important;
+	}
+}
+
+.divisor{
+	p{
+		color:$accent;
+		opacity:1;
+	}
+}
+
+.graph{
+	width:100%;
+	min-width:1290px;
+	height: calc(2rem + 600px);
+	margin-bottom:1rem;
+	background-color:rgba(10,10,20,1);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	border-radius:2px;
+	padding:1rem 0;
+}
+
+.legendContainer{
+	display:block;
+	width:100%;
+	border-radius:2px;
+	background-color: rgba(10,10,20, 0.75);
+	border: 1px solid $accent;
+	padding: 0.75rem;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.infoButton{
+	font-size:1.5rem;
+	line-height:1.5rem;
+	color:$white;
+	display:inline-block;
+	float:right;
+	cursor:pointer;
+	@include transition(0.1s ease-in);
+}
+
+.infoButton:hover{
+	color:$accent;
+	@include transition(0.1s ease-in);
+}
+
+.colorInfo{
+	width:55%;
+	display: inline-block;
+	position:relative;
+	border-left:1px solid $accent;
+
+	h2{
+		display:block;
+		font-size:1rem;
+		text-transform:uppercase;
+		letter-spacing:2px;
+		color:$gray;
+		font-weight:100;
+		margin-bottom: 0.25rem;
+		pointer-events:none;
+	}
+}
+.shapeInfo{
+	width: 40%;
+	display:inline-block;
+	position:relative;
+	float:left;
+
+	h2{
+		display:block;
+		font-size:1rem;
+		text-transform:uppercase;
+		letter-spacing:2px;
+		color:$gray;
+		font-weight:100;
+		margin-bottom: 0.25rem;
+	}
+	h3{
+		margin-left:1.5rem;
+		font-weight:500 !important;
+	}
+
+	.positive{
+		height: 0;
+		border-style: solid;
+		position:absolute;
+		margin-top:0.25rem;
+		border-width: 0 0.65rem 0.95rem 0.65rem;
+		border-color: transparent transparent $gray transparent;
+		box-shadow: inset 0px 0px 2.5px 0px rgba(0,0,0,0.75);
+	}
+	.neutral{
+		width:1.25rem;
+		height:1.25rem;
+		border-radius:100%;
+		display: inline-block;
+		margin-top:0.125rem;
+		position:absolute;
+		background-color:$gray;
+	}
+
+	.negative{
+		border-style: solid;
+		border-width:  0.95rem  0.65rem 0 0.65rem;
+		border-color: $gray transparent transparent transparent;
+		box-shadow: inset 0px 0px 2.5px 0px rgba(0,0,0,0.75);
+		position:absolute;
+		margin-top:0.25rem;
+	}
+}
+.legendInfo{
+	padding:2rem 4rem;
+	display:none;
+	p{
+		text-align:center;
+		font-size:1rem;
+		line-height:1.5rem;
+	}
+
+
+}
+
+
+.aCandidate{
+	display:inline-block;
+	text-align:left;
+		h3{
+			color:$gray;
+			font-weight:300;
+			text-transform:uppercase;
+			float:right;
+			font-size:1.25rem;
+			line-height:1.5rem;
+
+			span{
+				font-weight:800;
+			}
+		}
+	margin: 0 1rem;
+}
+
+.circle{
+	width:1.25rem;
+	height:1.25rem;
+	border-radius:100%;
+	display: inline-block;
+	float:left;
+	margin-top:0.125rem;
+	margin-right:0.25rem;
+	cursor:pointer;
+}
+
+.circle.active{
+	opacity:0.25;
+}
+
+.graph{
+	h3{
+		float:left;
+		text-transform:uppercase;
+		font-weight:300;
+		margin-bottom:5.10rem;
+		margin-bottom: calc(1.75rem + 60px);
+		width:100%;
+		font-size:1.5rem;
+		span{
+			font-weight:800;
+		}
+	}
+
+	h3:first-child{
+		margin-top:35px;
+	}
+}
+
+.xAxis{
+	width:290px;
+	height: 100%;
+	display:inline-block;
+	float:left;
+	padding-right: 25px;
+	text-align:right;
+	border-right: 1px solid $accent;
+}
+
+#theVis{
+	float:none;
+}
+
+svg{
+	path{
+		cursor:pointer;
+		@include transition(0.1s ease-in);
+
+	}
+	path:hover{
+		opacity:1;
+		@include transition(0.1s ease-in);
+	}
+}
+
+.mytooltip {
+  position:absolute;
+  text-align: center;
+  width:250px;
+  height:auto;
+  background-color: $black;
+  border-radius: 2px;
+  color: $white;
+  padding: 6px 12px;
+  z-index:3;
+  pointer-events:none;
+  margin-bottom:50%;
+}
+
+.mytooltip:hover{
+	display:block;
+	opacity:1;
+}
+.mytooltip span {
+    display: block;
+    text-align: center;
+    width: 200px;
+    height: auto;
+    margin: 5px auto;
+  }

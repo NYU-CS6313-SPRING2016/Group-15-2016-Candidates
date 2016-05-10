@@ -1,0 +1,50 @@
+<!--Template For Candidate View-->
+<template name="candidateView">
+    <div class="graph">
+      <div class="xAxis">
+        {{>candidateAxis}} 
+      </div>
+       {{>d3Rendering}}
+    </div>
+    <div class="legendContainer">
+      {{>candidateLegend}}
+    </div>
+</template>
+
+<!--Template For Candidate View X Axis-->
+<template name="candidateAxis">
+  {{#each Networks}}
+      <h3><span>{{name}}</span></h3>
+    {{/each}}
+</template>
+
+<!--Template For candidateLegend-->
+<template name="candidateLegend">
+  <div class="shapeInfo">
+      <h2>The Sentiment is represented by Shape</h2>
+      <div class="aCandidate">
+      <span class="positive"></span>
+      <h3>Positive</h3>
+      </div>
+      <div class="aCandidate">
+      <span class="neutral"></span>
+      <h3>Neutral</h3>
+      </div>
+      <div class="aCandidate">
+      <span class="negative"></span>
+      <h3>Negative</h3>
+      </div>
+    </div>
+  <div class="colorInfo">
+  <h2>Candidate That Tweet Refers To Is Represented by Color</h2>   
+    {{#each Candidate}}
+      <div class= "aCandidate">
+        <div class="circle" style="background-color:{{color}}"></div>
+        <h3>{{firstName}}<span style="color:{{color}}">{{lastName}}</span></h3>
+      </div>
+    {{/each}}
+    </div>
+    <i id="candidateViewInfo" class="infoButton ion-information-circled"></i>
+    <div class="legendInfo">
+    </div>
+</template>

@@ -1,0 +1,56 @@
+<!--Template For Network View-->
+<template name="networkView">
+    <div class="graph">
+      <div class="xAxis">
+        {{>networkAxis}} 
+      </div>
+       {{>d3Rendering}}
+    </div>
+    <div class="legendContainer">
+      {{>networkLegend}}
+    </div>
+</template>
+
+<!--Template For Network View X Axis-->
+<template name="networkAxis">
+   {{#each Candidates}}
+      <h3>{{firstName}}<span>{{lastName}}</span></h3>
+    {{/each}}
+</template>
+
+<!--Template For networkLegend-->
+<template name="networkLegend">
+    <div class="shapeInfo">
+      <h2>The Sentiment is represented by Shape</h2>
+      <div class="aCandidate">
+      <span class="positive"></span>
+      <h3>Positive</h3>
+      </div>
+      <div class="aCandidate">
+      <span class="neutral"></span>
+      <h3>Neutral</h3>
+      </div>
+      <div class="aCandidate">
+      <span class="negative"></span>
+      <h3>Negative</h3>
+      </div>
+    </div>
+  <div class="colorInfo">
+  <h2>Publisher Of Tweet Is Represented by Color</h2>
+    {{#each Network}}
+      <div class= "aCandidate" id="{{_id}}">
+        <div class="circle" style="background-color:{{color}}"></div>
+        <h3><span >{{name}}</span></h3>
+      </div>
+    {{/each}}
+  </div>
+    <i id="networkViewInfo" class="infoButton ion-information-circled"></i>
+    <div class="legendInfo">
+      <p>The colors above represent the news network that published the tweet. <br>The sentiment of each tweet is expressed in the form of three shapes:<br>
+
+      The tweets are grouped vertically according to the candidate they refer to, and horizontally according to the date of the tweet.
+      <br>
+      Hover over a tweet to display the tweet in full and a link to view it on Twitter.
+      </p>
+    </div>
+</template>

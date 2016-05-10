@@ -1,0 +1,3 @@
+[submodule "Twitter Scrape/nodejs-twitter-api-interface"]
+	path = Twitter Scrape/nodejs-twitter-api-interface
+	url = https://github.com/johnward2/nodejs-twitter-api-interface.git
