@@ -2,7 +2,7 @@ import './main.html';
 import './main.js';
 import { Mongo} from 'meteor/mongo';
 
-var colors = ["#287D7D", "#5C832F","#DB9E36","#B9121B","#FF8598"];
+var colors = ["#00b89d", "#d90071","#9dc758","#cf8252","#a97dcd"];
 
 var yMargin = [50,175, 300, 425, 550];
 
@@ -103,7 +103,7 @@ Template.d3Rendering.onRendered( function(){
 					return colors[0];
 				}
 				if(n == "NBCPolitics"){
-					return colors[1];
+					return colors[4];
 				}
 				if(n == "CNNPolitics"){
 					return colors[2];
@@ -112,7 +112,7 @@ Template.d3Rendering.onRendered( function(){
 					return colors[3];
 				}
 				else if(n == "BBCNewsUS")
-					return colors[4];
+					return colors[1];
 			})
 			.attr("opacity", 0.75)
 			.attr("stroke", "#1c1c1e")

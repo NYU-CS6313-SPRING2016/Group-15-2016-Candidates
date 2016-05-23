@@ -4,7 +4,7 @@ import { Session} from 'meteor/session';
 
 import './main.html';
 
-colors = ["#287D7D", "#5C832F","#DB9E36","#B9121B","#FF8598"];
+colors = ["#00b89d", "#d90071","#9dc758","#cf8252","#a97dcd"];
 
 
 Meteor.startup(function() {
