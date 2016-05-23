@@ -1,2 +1,2 @@
-# Sentiment Analysis of 2016 Presidential Election Coverage
-Yeah it's mouthful, but it's neat.
+# 2016-candidates-media
+A sentiment analysis and visualization of 2016 presidential campaigns' media coverage
